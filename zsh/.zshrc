@@ -11,6 +11,10 @@ export NVM_DIR=~/.nvm
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
+#rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # Oh-my-zsh settings
 ZSH_THEME="bryant"
 COMPLETION_WAITING_DOTS="true"

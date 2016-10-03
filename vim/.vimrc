@@ -132,6 +132,7 @@ inoremap <PageUp> <Nop>
 inoremap <PageDown> <Nop>
 
 "" Maps
+inoremap jj <ESC>
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 nnoremap ! :!
 nnoremap <tab> :bn<CR>

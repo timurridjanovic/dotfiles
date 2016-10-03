@@ -55,6 +55,25 @@ else
 	echo "npm install -g jq"
 fi
 
+if hash type rbenv 2>/dev/null; then
+	echo "installing rbenv"
+	git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+	cd ~/.rbenv && src/configure && make -C src
+	echo "installing ruby-build"
+	git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+	echo "installing ruby"
+	rbenv install 2.2.0
+	rbenv local 2.2.0
+else
+	echo "rbenv is not installed"
+	echo "install rbenv and run these commands manually"
+	echo "git clone https://github.com/rbenv/rbenv.git ~/.rbenv"
+	echo "cd ~/.rbenv && src/configure && make -C src"
+	echo "git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build"
+	echo "rbenv install 2.2.0"
+	echo "rbenv local 2.2.0"
+fi
+
 if hash gem 2>/dev/null; then
 	gem install html2haml --pre
 	gem install sass
