@@ -63,7 +63,7 @@ if hash type rbenv 2>/dev/null; then
 	git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 	echo "installing ruby"
 	rbenv install 2.2.0
-	rbenv local 2.2.0
+	rbenv global 2.2.0
 else
 	echo "rbenv is not installed"
 	echo "install rbenv and run these commands manually"
