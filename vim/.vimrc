@@ -15,6 +15,9 @@ set nocompatible
 set undofile
 set undodir=~/.vim/undo
 
+""Netrw
+let g:netrw_chgwin=2
+
 "" Set Leader
 let mapleader=","
 
@@ -132,7 +135,7 @@ inoremap <PageUp> <Nop>
 inoremap <PageDown> <Nop>
 
 "" Maps
-inoremap jj <ESC>
+inoremap jj <Esc>
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 nnoremap ! :!
 nnoremap <tab> :bn<CR>
@@ -146,7 +149,8 @@ nmap <silent> N ?<CR>zz
 "" Leader maps
 nnoremap <Leader>s :source $HOME/.vimrc
 nnoremap <Leader>v :e $HOME/.vimrc
-nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>p :Files<CR>
 nnoremap <Leader>sudo :w !sudo tee %
 nnoremap <Leader>m  :<c-u><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
@@ -179,13 +183,6 @@ let g:closetag_html_style=1
 so ~/.vim/scripts/matchit.vim
 so ~/.vim/scripts/closetag.vim
 execute pathogen#infect()
-
-"" CtrlP Settings
-let g:ctrlp_map = '<Leader>p'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_user_command = 'ag %s -U -l --nocolor -g ""'
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_open_multiple_files = '1r'
 
 "" Syntastic settings
 function! ToggleErrors()
@@ -257,3 +254,9 @@ nnoremap <Leader>z $zfa}
 "" Delete Trailing Whitespaces
 au BufWritePre *.js,*.html,*.css,*.scss :%s/\s\+$//e
 
+"" Toggle NerdTree
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
+
+""fzf
+set rtp+=/usr/local/opt/fzf
