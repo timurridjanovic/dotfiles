@@ -10,7 +10,9 @@ fi
 brew install tmux
 brew install reattach-to-user-namespace
 brew install newsbeuter
-# install pip
+brew install fzf
+/usr/local/opt/fzf/install
+# brew install pip
 # pip install requests
 # install https://github.com/lepinkainen/py-pouch
 
